@@ -92,14 +92,17 @@ section{padding:clamp(4.5rem,9vw,7.5rem) 0}
   linear-gradient(90deg,rgba(18,19,21,.72) 0%,rgba(18,19,21,.25) 55%,rgba(18,19,21,.1) 100%),
   linear-gradient(0deg,rgba(18,19,21,.85) 0%,rgba(18,19,21,0) 45%)}
 .hero-content{position:relative;z-index:2}
-.hero-top{display:grid;grid-template-columns:1.3fr .9fr;gap:3rem;align-items:end;margin-bottom:1.6rem}
+.hero-top{margin-bottom:1.6rem}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:.45rem .9rem;border-radius:999px;font-size:.82rem;font-weight:600;margin-bottom:1.2rem}
 .hero-tag i{color:var(--brass)}
-.hero h1{font-size:clamp(3rem,9vw,7.6rem);font-weight:800;letter-spacing:-.04em;line-height:.9}
+.hero h1{font-size:min(10.2vw,9.6rem);font-weight:800;letter-spacing:-.045em;line-height:.88;margin:.2rem 0 1.4rem;text-shadow:0 6px 40px rgba(0,0,0,.35)}
 .hero h1 em{font-style:normal;color:var(--brass)}
-.hero-side{font-size:1.05rem;color:rgba(255,255,255,.88);border-left:2px solid var(--brass);padding:1.1rem 1.3rem;background:rgba(18,19,21,.45);backdrop-filter:blur(10px);border-radius:0 14px 14px 0;max-width:430px;justify-self:end}
-.hero-side strong{display:block;font-family:var(--head);font-size:1.6rem;color:var(--white);margin-top:.6rem}
-.hero-side small{font-size:.85rem;color:rgba(255,255,255,.7)}
+.hero-info{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.28)}
+.hero-info p{max-width:46ch;font-size:1.08rem;color:rgba(255,255,255,.9)}
+.hero-price{text-align:right;flex:none}
+.hero-price strong{display:block;font-family:var(--head);font-size:1.7rem;color:var(--white);line-height:1.1}
+.hero-price small{font-size:.85rem;color:rgba(255,255,255,.75)}
+.hero-price i{color:var(--brass)}
 .fade-up{opacity:0;transform:translateY(26px);animation:fadeUp .9s var(--ease) forwards}
 @keyframes fadeUp{to{opacity:1;transform:none}}
 .d1{animation-delay:.7s}.d2{animation-delay:.85s}.d3{animation-delay:1s}.d4{animation-delay:1.15s}
@@ -363,8 +366,8 @@ footer li i{color:var(--brass);width:22px}
 @media (max-width:900px){
   .nav-links,.nav-cta{display:none}
   .burger{display:grid;place-items:center}
-  .hero-top{grid-template-columns:1fr;gap:1.4rem}
-  .hero-side{justify-self:start}
+  .hero-info{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .hero-price{text-align:left}
   .quick{grid-template-columns:1fr 1fr}
   .q-field:nth-child(2){border-right:0}
   .q-field:nth-child(1),.q-field:nth-child(2){border-bottom:1px solid var(--stone)}
@@ -383,8 +386,9 @@ footer li i{color:var(--brass);width:22px}
   .fact:nth-last-child(-n+2){border-bottom:0}
   .quick{grid-template-columns:1fr}
   .hero{padding-top:6rem}
-  .hero h1{font-size:clamp(2.8rem,15vw,4.2rem)}
-  .hero-side{font-size:.95rem}
+  .hero h1{font-size:16.5vw;line-height:.86;margin-bottom:1.1rem}
+  .hero-info p{font-size:.95rem}
+  .hero-price strong{font-size:1.4rem}
   .q-field{border-right:0!important;border-bottom:1px solid var(--stone)}
   .q-field:nth-child(3){border-bottom:0}
   .addons,.feat-wrap{grid-template-columns:1fr}
@@ -459,15 +463,15 @@ footer li i{color:var(--brass);width:22px}
   <div class="slides" id="slides" aria-roledescription="carousel" aria-label="Venue photos"></div>
   <div class="hero-content wrap">
     <div class="hero-top">
-      <div>
-        <span class="hero-tag fade-up d1"><i class="fa-solid fa-location-dot"></i> 45 East 20th Street, Flatiron, NYC</span>
-        <h1 class="fade-up d2">Penthouse<br><em>2045</em></h1>
+      <span class="hero-tag fade-up d1"><i class="fa-solid fa-location-dot"></i> 45 East 20th Street, Flatiron, NYC</span>
+      <h1 class="fade-up d2">Penthouse <em>2045</em></h1>
+      <div class="hero-info fade-up d3">
+        <p>A daylight penthouse with a private skyline rooftop, made for parties, launches and gatherings of up to 250 guests.</p>
+        <div class="hero-price">
+          <strong>From $1,000 / hour</strong>
+          <small><i class="fa-solid fa-circle-check"></i> Sales tax included &nbsp;·&nbsp; 2 hour minimum</small>
+        </div>
       </div>
-      <p class="hero-side fade-up d3">
-        A daylight penthouse with a private skyline rooftop, made for parties, launches and gatherings of up to 250 guests.
-        <strong>From $1,000 / hour</strong>
-        <small><i class="fa-solid fa-circle-check"></i> Sales tax included &nbsp;·&nbsp; 2 hour minimum</small>
-      </p>
     </div>
     <form class="quick fade-up d4" id="quickForm" aria-label="Quick availability check">
       <div class="q-field">
